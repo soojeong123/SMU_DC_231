@@ -1,0 +1,10 @@
+p {
+  font-size: 28px; /* 둘다한번에바꿀수있음 */
+}
+
+.paraA {
+  background-color: blueviolet;
+}
+.paraB {
+  background-color: blue;
+}
