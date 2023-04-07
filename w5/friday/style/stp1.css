@@ -17,6 +17,7 @@
 .navBar__buttons {
   display: flex;
   gap: 16px;
+  /* text-transform: 대소문자변경가능 */
 }
 
 .navBar__button > a {
