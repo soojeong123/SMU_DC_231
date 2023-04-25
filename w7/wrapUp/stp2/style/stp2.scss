@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; //기본설정
+}
+
+.section {
+  /* background-color: red; */
+}
+.container {
+  /* background-color: green; */
+  $padding-inline-value: 48px; //$=변수
+  max-width: 1200px + 2 * $padding-inline-value; //calc수식없어도 됨
+  margin-inline: auto;
+  padding-inline: $padding-inline-value;
+}
+.wrapper {
+  /* background-color: blue; */
+  padding-block: 64px;
+}
+
+.button {
+  width: fit-content;
+  background-color: cornflowerblue;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  &--type-text {
+    background-color: unset;
+    color: cornflowerblue;
+    padding-inline: 0;
+  }
+}
+//items=수직축라인 기준 아이템 정렬, content=수직축라인 기준(두줄이상일때만) 라인 자체가 정렬
+.nav {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  container-type: inline-size; ///nav에 container 속성을 부여, 자동완성 안됨
+  container-name: nav; ///원하는 이름으로 짓기
+  .wrapper {
+    display: flex; //가로방향 배치
+    justify-content: space-between; //균일간격으로 배치
+    align-items: baseline;
+    padding-block: 16px;
+  }
+  &__menuWrapper {
+    display: flex;
+    gap: 24px;
+    align-items: baseline; //수직축방향으로 베이스라인 기준 정렬
+  }
+  .lt680px {
+    display: none; ///평상시에는 none, 안보이다가
+  }
+  @container nav (width < 42.5rem) {
+    &__menuWrapper {
+      display: none; ///container nav가 680px보다 작을때, nav__menuWrapper를 none으로
+    }
+    .lt680px {
+      display: unset; ///680px보다 작아지면 unset, 초기화?되는듯
+    }
+  }
+}
+
+.main {
+  &__media {
+    aspect-ratio: 16 / 9;
+    background-color: rgb(209, 233, 255);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; //부모요소에 딱 맞게 지정
+      // object-fit: contain; //사진비율에 맞게
+      // object-position: 0 0; //시작지점
+    }
+  }
+}
+
+#hero1 {
+  text-align: center;
+  .button {
+    margin-inline: auto;
+  }
+  .main {
+    &__text {
+      margin-inline: auto; //가로중앙배치
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    &__media {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 24px;
+  }
+}
+
+#hero2 {
+  background-color: aliceblue;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    $gap-val: 24px;
+    gap: $gap-val;
+    & > * {
+      flex: 1;
+      // width: calc((100% - $gap-val) / 2);
+    }
+  }
+  .main {
+    &__text {
+      &__buttonWrapper {
+        display: flex;
+        gap: 16px;
+      }
+    }
+    &__media {
+      aspect-ratio: 4 / 3;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  p {
+    max-width: 40ch; //n글자로 사이즈 지정
+    margin-bottom: 24px;
+  }
+  //mediaQuery
+  @media (width < 53.125rem) {
+    .wrapper {
+      display: block;
+      text-align: center;
+      p {
+        margin-inline: auto;
+      }
+    }
+    .main {
+      &__text {
+        margin-bottom: 36px;
+        &__buttonWrapper {
+          margin-inline: auto;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  font-size: 14px;
+  background-color: gray;
+  color: white;
+  container-type: inline-size; ///container 속성 부여
+  container-name: footer;
+  a {
+    text-decoration: none; //밑줄없애기
+    color: white;
+  }
+  li {
+    list-style: none; //리스트 점 없애기
+  }
+  svg {
+    fill: white; //svg 태그 이미지 색 변경
+  }
+  .wrapper {
+    // display: flex; //가로배열
+    // justify-content: space-between; //균등배열여백생김
+    // gap: 24px;
+    // > * {
+    //   //=.footer .wrapper > * =.footer 밑의 .wrapper 아래에 있는 모든 요소에
+    //   flex: 1; //똑같은 사이즈가 됨
+    // }
+    display: grid; //grid-template-rows, colomns = 행과 열의 개수 지정
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  h2 {
+    margin-top: 0.25rem; //Figma 로고랑 위치 맞춰줌
+    font-size: 1rem;
+    margin-bottom: 1rem; //1rem = 16px 표준 사이즈?
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  &__logo {
+    margin-bottom: 0.75rem;
+  }
+  &__extlinkWrap {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center; //가로정렬
+    margin-bottom: 0.5rem;
+  }
+  ///container footer가 710px이하가 되면
+  @container footer (width < 44.375rem) {
+    .column:first-of-type {
+      grid-row: 1 / span 2;
+      //column의 첫번째 요소는 1번 라인에서 2칸 차지한다
+    }
+    .wrapper {
+      grid-template-columns: 1fr 1fr 1fr; ///footer .wrapper의 그리드가 3줄로 바뀜
+    }
+    ////containerQuery는 요소의 사이즈를 기준으로, mediaQuery는 창 사이즈를 기준으로////
+  }
+}
