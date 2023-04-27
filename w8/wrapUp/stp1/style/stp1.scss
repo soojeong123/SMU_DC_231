@@ -171,20 +171,20 @@
       padding-inline: 0;
     }
   }
-  // @container footer (width < 35rem) {
-  //   .main__imgs {
-  //     grid-template-columns: 1fr;
-  //     aline-items: center;
-  //   }
-  //   .main {
-  //     &__text {
-  //       font-size: 18px;
-  //     }
-  //   }
-  //   .container {
-  //     padding-inline: 0;
-  //   }
-  // }
+  @container footer (width < 35rem) {
+    .main__imgs {
+      grid-template-columns: 1fr;
+      aline-items: center;
+    }
+    .main {
+      &__text {
+        font-size: 18px;
+      }
+    }
+    .container {
+      padding: 0;
+    }
+  }
 }
 .footer {
   margin: 60px;

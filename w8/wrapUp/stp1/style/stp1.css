@@ -146,6 +146,18 @@
     padding-inline: 0;
   }
 }
+@container footer (width < 35rem) {
+  #hero2 .main__imgs {
+    grid-template-columns: 1fr;
+    aline-items: center;
+  }
+  #hero2 .main__text {
+    font-size: 18px;
+  }
+  #hero2 .container {
+    padding: 0;
+  }
+}
 
 .footer {
   margin: 60px;
