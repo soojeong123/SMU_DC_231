@@ -21,6 +21,7 @@
   color: rgb(0, 234, 183);
   font-weight: 700;
   font-size: 36px;
+
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -46,10 +47,23 @@
 #hero1 {
   background-color: black;
   display: flex;
+  container-type: inline-size; ///container 속성 부여
+  container-name: nav;
+
+  @container nav (width < 35rem) {
+    .container {
+      aline-items: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 
 #hero2 {
+  aline-items: center;
+  display: flex;
   margin-inline: auto;
+  padding-inline: auto;
   container-type: inline-size; ///container 속성 부여
   container-name: footer;
   .container {
@@ -60,9 +74,11 @@
     justify-content: center;
   }
   .main {
+    // margin-inline: auto;
+    // padding-inline: auto;
     &__text {
       padding-top: 70px;
-      margin-inline: auto;
+      // margin-inline: auto;
       font-weight: bolder;
       font-size: 28px;
       letter-spacing: -2px;
@@ -70,6 +86,8 @@
       font-weight: 700;
     }
     &__imgs {
+      margin-inline: auto;
+      padding-inline: auto;
       margin-left: 63px;
       margin-right: 63px;
       padding-top: 24px;
@@ -130,18 +148,43 @@
   @container footer (width < 88.125rem) {
     .main__imgs {
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      aline-items: center;
     }
   }
   @container footer (width < 74.375rem) {
     .main__imgs {
       grid-template-columns: 1fr 1fr 1fr;
+      aline-items: center;
     }
   }
   @container footer (width < 60.3125rem) {
     .main__imgs {
       grid-template-columns: 1fr 1fr;
+      aline-items: center;
+    }
+    .main {
+      &__text {
+        font-size: 18px;
+      }
+    }
+    .container {
+      padding-inline: 0;
     }
   }
+  // @container footer (width < 35rem) {
+  //   .main__imgs {
+  //     grid-template-columns: 1fr;
+  //     aline-items: center;
+  //   }
+  //   .main {
+  //     &__text {
+  //       font-size: 18px;
+  //     }
+  //   }
+  //   .container {
+  //     padding-inline: 0;
+  //   }
+  // }
 }
 .footer {
   margin: 60px;
