@@ -190,13 +190,14 @@
     font-size: 0.5rem;
   }
 }
-@container footer (width < 35rem) {
+@container footer__ (width < 35rem) {
   .footer .wrapper {
     aline-items: center;
   }
   .footer .column1 {
-    font-size: 0.25rem;
+    font-size: 2px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
   }
 }

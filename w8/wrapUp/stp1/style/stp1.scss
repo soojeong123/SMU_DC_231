@@ -221,14 +221,16 @@
       font-size: 0.5rem;
     }
   }
-  @container footer (width < 35rem) {
+  @container footer__ (width < 35rem) {
     .wrapper {
       aline-items: center;
     }
     .column1 {
-      font-size: 0.25rem;
+      font-size: 2px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      // padding-inline: auto;
+      gap: 10px;
     }
   }
 }
