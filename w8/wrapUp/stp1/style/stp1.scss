@@ -196,15 +196,39 @@
 .footer {
   margin: 60px;
   // border-top: 1px solid gray;
-  font-size: 14px;
+  font-size: 12px;
   color: gray;
-  justify-content: center;
+  // .wrapper {
+  //   justify-content: space-between;
+  // }
+  container-type: inline-size; ///container 속성 부여
+  container-name: footer__;
 
-  li {
-    float: left;
-    list-style: none;
+  .column1 {
+    display: flex;
+    justify-content: center;
+    gap: 0.875rem;
   }
-  .wrapper {
-    margin-inline: auto;
+  .column2 {
+    display: flex;
+    justify-content: center;
+  }
+  @container footer__ (width < 60.3125rem) {
+    .wrapper {
+      aline-items: center;
+    }
+    .column1 {
+      font-size: 0.5rem;
+    }
+  }
+  @container footer (width < 35rem) {
+    .wrapper {
+      aline-items: center;
+    }
+    .column1 {
+      font-size: 0.25rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

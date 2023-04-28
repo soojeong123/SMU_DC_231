@@ -168,14 +168,35 @@
 
 .footer {
   margin: 60px;
-  font-size: 14px;
+  font-size: 12px;
   color: gray;
+  container-type: inline-size;
+  container-name: footer__;
+}
+.footer .column1 {
+  display: flex;
+  justify-content: center;
+  gap: 0.875rem;
+}
+.footer .column2 {
+  display: flex;
   justify-content: center;
 }
-.footer li {
-  float: left;
-  list-style: none;
+@container footer__ (width < 60.3125rem) {
+  .footer .wrapper {
+    aline-items: center;
+  }
+  .footer .column1 {
+    font-size: 0.5rem;
+  }
 }
-.footer .wrapper {
-  margin-inline: auto;
+@container footer (width < 35rem) {
+  .footer .wrapper {
+    aline-items: center;
+  }
+  .footer .column1 {
+    font-size: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
