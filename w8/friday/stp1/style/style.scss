@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: aquamarine;
+  height: 100dvh; //화면 크기에 맞춰 채워짐
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.badge {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  line-height: 16px;
+  background-color: red;
+  aspect-ratio: 1 / 1;
+  width: 16px;
+  text-align: center;
+  border-radius: 999px;
+  color: white;
+  //   position: relative; //이동 가능하게 만들어줌
+  //   left: -8px;
+  //   top: -16px;
+  //relative를 써도 원래 있던 자리에 다른 요소가 올 수 없음
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  //position은 다음 시간에 설명
+}
+
+.button {
+  display: flex; //가로정렬
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  //   background-color: aquamarine;
+  width: fit-content;
+  color: #49454f;
+  border: 1px solid #797472;
+  border-radius: 8px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px; //행간인가?
+  transition: background-color 200ms ease-out; //all 넣으면 반응 느림?
+
+  &:hover {
+    background-color: red;
+  }
+}
+// .button:hover //button에 마우스가 올라오면
