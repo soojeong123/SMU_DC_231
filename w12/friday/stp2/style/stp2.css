@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.warpper {
+  max-width: 60ch;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.site-title {
+  font-size: 48px;
+  text-align: center;
+}
+
+section {
+  padding-block: 80px;
+}
+
+.section-title {
+  font-size: 36px;
+}
+
+.diagonal {
+  position: relative;
+  isolation: isolate;
+}
+.diagonal::after {
+  content: "";
+  background: linear-gradient(38deg in oklch, oklch(70% 0.25 0) 0%, oklch(70% 0.25 150) 100%);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: skewY(-5deg);
+}
