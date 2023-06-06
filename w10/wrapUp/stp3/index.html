@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>w10 - stp1</title>
+  </head>
+  <script>
+    // 변수= 쓸 값을 컴퓨터에 저장해두는 것, 이름붙인 변수를 통해 값, 데이터를 불러올수있다
+    // 변수 선언 방식
+    // 옛날문법: var 변수이름;
+    // 요즘문법: let 변수이름;
+    let a = 1; //a라는 변수에 1을 넣음, a = 1
+    console.log(a); //따라서 1
+    // 코딩에서 "=" 은 같다는 의미가 아니라, 좌변을 우변에 할당한다 "assign" 의 의미다
+    //교환법칙 안됨
+    a = 2;
+    console.log(a); //=2
+    a = a + 1;
+    console.log(a); //=3
+    a++; //=a +1
+    console.log(a); //=4
+    a += 1; //=a + 1
+    console.log(a); //=5
+    let txt = "A";
+    console.log(txt); //=A
+    txt += 1;
+    console.log(txt); //=A1
+    txt = txt + 1;
+    console.log(txt); //=A11
+    txt += "텍스트";
+    console.log(txt); //=A11텍스트
+    //txt++; 은 안된다 (들어있는게 숫자가 아니기 때문에)
+  </script>
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+  <body>
+    <h1>텍스트~</h1>
+  </body>
+</html>
