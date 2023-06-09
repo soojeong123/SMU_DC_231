@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>w10 - stp4</title>
+    <title>w10 - stp5</title>
     <style>
       body {
         margin: 0;
@@ -29,9 +29,21 @@
       .box:hover {
         background-color: bisque;
       }
+      .box--clicked {
+        background-color: cornflowerblue;
+      }
+      .box--clicked:hover {
+        background-color: cornflowerblue;
+      }
     </style>
+    <!-- 안됨 -->
+    <!-- <script src="js/jsfile.js"></script>-->
+    <!-- 됨 -->
+    <!-- <script src="js/jsfile.js" defer></script>-->
   </head>
   <body>
+    <!-- 안됨 -->
+    <!-- <script src="js/jsfile.js"></script>-->
     <!-- (#box$.box>{box$})*3 -->
     <div class="container">
       <div id="box1" class="box">box1</div>
@@ -39,9 +51,7 @@
       <div id="box3" class="box">box3</div>
     </div>
   </body>
-  <script>
-    console.log(document);
-    console.log(document.getElementById("box1"));
-    console.log(document.getElementsByClassName("box"));
-  </script>
+  <!-- 됨 -->
+  <script src="js/jsfile.js"></script>
+  <!-- 위에서 안되는 이유... id, class같이 document 안에 있는 요소를 불러오는 스크립트인데 아직 없는 상태여서? 대충 그런듯? -->
 </html>

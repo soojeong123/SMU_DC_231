@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>w10 - stp4</title>
+    <title>w10 - stp5</title>
     <style>
       body {
         margin: 0;
@@ -29,6 +29,12 @@
       .box:hover {
         background-color: bisque;
       }
+      .box--clicked {
+        background-color: cornflowerblue;
+      }
+      .box--clicked:hover {
+        background-color: cornflowerblue;
+      }
     </style>
   </head>
   <body>
@@ -40,8 +46,17 @@
     </div>
   </body>
   <script>
-    console.log(document);
-    console.log(document.getElementById("box1"));
-    console.log(document.getElementsByClassName("box"));
+    // document.getElementById("box1").onclick = function () {
+    //   document.getElementById("box1").style = "background-color: cornflowerBlue";
+    // }; //밑이랑 똑같음
+    // let aBox = document.getElementById("box1");
+    // aBox.onclick = function () {
+    //   aBox.style = "background-color: cornflowerBlue";
+    // };
+    //classList.toggle = 클래스 목록에 ("  ")가 있으면 지우고, 없으면 추가..?
+    let aBox = document.getElementById("box1");
+    aBox.onclick = function () {
+      aBox.classList.toggle("box--clicked");
+    };
   </script>
 </html>
