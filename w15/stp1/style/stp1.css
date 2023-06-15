@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: system-ui;
   font-size: 1.125rem;
-  line-height: 1.5;
+  line-height: 1.7;
   background: var(--bg);
   color: var(--txt);
 }
@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: calc(80ch + 4rem);
-  min-height: max(50dvh, 2rem);
+  min-height: max(100dvh, 2rem);
   margin-inline: auto;
   padding-inline: 2rem;
 }
@@ -133,6 +133,80 @@ footer .wrapper {
   min-height: max(100dvh, 2rem);
 }
 
+#title {
+  filter: blur(0.1875rem);
+  transition: all 500ms ease-in-out;
+}
+
+#title:hover {
+  filter: blur(0);
+  transition: all 500ms ease-in-out;
+}
+
+#section1 h3.animTarget {
+  filter: blur(0.125rem);
+  color: transparent;
+  transition: all 700ms ease-in-out;
+}
+#section1.triggered .animTarget {
+  filter: blur(0);
+  color: var(--txt);
+}
+
+#section1 p.animTarget {
+  filter: blur(0.125rem);
+  color: transparent;
+  transition: all 1500ms ease-in-out;
+}
+#section1.triggered .animTarget {
+  filter: blur(0);
+  color: var(--txt);
+}
+
+#section2 .animTarget {
+  transform: translateX(100vw);
+  transition: transform 500ms ease-in-out;
+}
+#section2.triggered .animTarget {
+  transform: translateX(0);
+}
+
+#section3.triggered h3.animTarget {
+  animation: wiggle 2s ease-out;
+}
+
+#section3 h2 {
+  filter: blur(0.1875rem);
+  transition: all 500ms ease-in-out;
+}
+#section3 h2:hover {
+  filter: blur(0);
+  transition: all 500ms ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-7deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
 @media (width < 66.25rem) {
   .stickyWrapper {
     grid-template-columns: 1fr;
