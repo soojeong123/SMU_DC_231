@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.section {
+  background-color: antiquewhite;
+}
+.section:nth-child(even) {
+  background-color: lavender;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 37.5rem;
+  min-height: max(100dvh, 37.5rem);
+  /* 기본적으로 브라우저 크기 사이즈, 600이하로는 안내려감 */
+
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lottie {
+  /* background-color: aqua; */
+  /* max-width: 100%; */
+  /* 큰 로띠에는 이거 넣어주기 */
+}
+
+#lottie1 {
+  width: 500px;
+}

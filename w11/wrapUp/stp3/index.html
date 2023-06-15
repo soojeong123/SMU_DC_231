@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <title>W11-wraUp-stp3</title>
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 예제</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 기본</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          class="lottie"
+          id="lottie1"
+          src="https://assets3.lottiefiles.com/packages/lf20_Ms6QljN06q.json"
+          mode="bounce"
+          background="trasparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 호버</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          class="lottie"
+          id="lottie2"
+          src="https://assets3.lottiefiles.com/packages/lf20_Ms6QljN06q.json"
+          mode="bounce"
+          background="trasparent"
+          speed="1"
+          loop
+          hover
+        ></lottie-player>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 고급</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          id="lottie3"
+          class="lottie"
+          src="https://assets3.lottiefiles.com/packages/lf20_Ms6QljN06q.json"
+          >"></lottie-player
+        >
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠가 들어가는 페이지</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠가 들어가는 페이지</h2>
+      </div>
+    </div>
+  </body>
+  <!-- 로띠 스크롤 스크립트  -->
+  <script>
+    LottieInteractivity.create({
+      mode: "scroll",
+      player: "#lottie3",
+      actions: [
+        {
+          visibility: [0, 1],
+          type: "seek",
+          frames: [0, 240],
+        },
+      ],
+    });
+  </script>
+</html>
