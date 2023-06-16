@@ -37,7 +37,6 @@ body {
 
 header {
   text-align: center;
-  text-wrap: balance;
   word-break: keep-all;
 }
 
@@ -167,12 +166,17 @@ footer .wrapper {
 
 #section2 .animTarget {
   transform: translateX(100vw);
+  filter: blur(0.125rem);
   transition: transform 500ms ease-in-out;
 }
 #section2.triggered .animTarget {
   transform: translateX(0);
+  filter: blur(0);
 }
 
+#section3 h3.animTarget {
+  font-size: larger;
+}
 #section3.triggered h3.animTarget {
   animation: wiggle 2s ease-out;
 }
@@ -184,6 +188,7 @@ footer .wrapper {
 #section3 h2:hover {
   filter: blur(0);
   color: rgb(127, 23, 23);
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
   transition: all 300ms ease-in;
 }
 
@@ -195,16 +200,16 @@ footer .wrapper {
     transform: rotateZ(-3deg);
   }
   20% {
-    transform: rotateZ(10deg);
+    transform: rotateZ(5deg);
   }
   25% {
-    transform: rotateZ(-3deg);
+    transform: rotateZ(-2deg);
   }
   30% {
     transform: rotateZ(2deg);
   }
   35% {
-    transform: rotateZ(-2deg);
+    transform: rotateZ(-1deg);
   }
   40%, 100% {
     transform: rotateZ(0);
@@ -218,6 +223,32 @@ footer .wrapper {
 #section4.triggered .animTarget {
   filter: blur(0);
   color: var(--txt);
+}
+
+#section5 p.animTarget {
+  filter: blur(0.125rem);
+  transition: all 500ms ease-in-out;
+}
+#section5.triggered p.animTarget {
+  filter: blur(0);
+  color: var(--txt);
+}
+
+#section6 {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+#section6 p.animTarget {
+  filter: blur(0.25rem);
+  color: black;
+  transform: scale(50%);
+  transition: all 100ms ease-in-out;
+}
+#section6.triggered .animTarget {
+  filter: blur(0);
+  color: rgb(145, 9, 9);
+  transform: scale(100%);
 }
 
 @media (width < 66.25rem) {

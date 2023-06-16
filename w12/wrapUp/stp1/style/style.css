@@ -103,10 +103,6 @@ section:nth-child(even) {
   transform: translateX(0);
 }
 
-#section5.triggered .animTarget {
-  animation: wiggle 2s linear infinite;
-}
-
 @keyframes wiggle {
   0%, 7% {
     transform: rotateZ(0);
